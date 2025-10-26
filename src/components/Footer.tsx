@@ -13,7 +13,7 @@ const Footer = () => {
               Manav<span className="text-accent">.</span>
             </h3>
             <p className="text-white/70 leading-relaxed">
-              Aspiring AI & Data Science Student passionate about learning and building innovative solutions.
+              AI & ML Student actively learning Data Science, passionate about building innovative solutions.
             </p>
           </div>
           

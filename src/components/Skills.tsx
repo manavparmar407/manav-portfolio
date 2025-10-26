@@ -84,9 +84,9 @@ const Skills = () => {
                   Continuous Growth Mindset
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Currently expanding my technical foundation through continuous learning and hands-on projects. 
-                  Each day brings new opportunities to deepen my understanding of Python, Machine Learning, 
-                  and Data Science concepts.
+                  As an AI & ML student, I'm actively expanding my technical foundation by learning Data Science 
+                  alongside my core studies. Each day brings new opportunities to deepen my understanding of Python, 
+                  Machine Learning algorithms, and Data Science techniques through hands-on projects and continuous learning.
                 </p>
                 <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm">
                   🎯 Actively Learning & Building
