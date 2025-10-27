@@ -64,15 +64,15 @@ const Hero = () => {
                 Manav Parmar
               </span>
               <span className="block text-3xl lg:text-5xl mt-3 text-white/90">
-                AI & ML Student
+                AI & Data Science Student
               </span>
             </h1>
             
             {/* Enhanced Description */}
             <p className="text-xl text-white/80 leading-relaxed max-w-xl backdrop-blur-sm">
-              <span className="text-accent font-semibold">AI & Machine Learning</span> student actively learning 
+              Focused learner exploring the world of <span className="text-accent font-semibold">Artificial Intelligence</span> and 
               <span className="text-accent font-semibold"> Data Science</span>. 
-              Currently pursuing MCA in AI & ML at Lovely Professional University.
+              Currently pursuing MCA at Lovely Professional University.
             </p>
             
             {/* Stats Row */}

@@ -24,7 +24,7 @@ const About = () => {
             <p className="text-lg leading-relaxed text-muted-foreground">
               I have completed my <span className="text-foreground font-semibold">BCA from Saurashtra University, Rajkot</span> (2022–2025) 
               and am currently pursuing my <span className="text-foreground font-semibold">MCA in Artificial Intelligence and Machine Learning</span> at 
-              <span className="text-foreground font-semibold"> Lovely Professional University</span>. As an AI & ML student, I'm actively expanding my knowledge in Data Science.
+              <span className="text-foreground font-semibold"> Lovely Professional University</span>.
             </p>
           </Card>
           
@@ -64,7 +64,7 @@ const About = () => {
           {/* Learning Note */}
           <div className="mt-8 p-6 rounded-2xl bg-gradient-accent text-white text-center">
             <p className="text-lg font-medium">
-              🚀 AI & ML student actively learning Data Science, Python, and Machine Learning techniques to build a comprehensive skill set
+              🚀 Currently expanding my technical foundation through continuous learning in Python, Machine Learning, and Data Science
             </p>
           </div>
         </div>
