@@ -162,7 +162,7 @@ const Hero = () => {
                 <img 
                   src={profileImage} 
                   alt="Manav Parmar - Professional Profile"
-                  className="w-full h-full object-cover relative z-10"
+                  className="w-full h-full object-cover rounded-full relative z-10"
                 />
               </div>
               
