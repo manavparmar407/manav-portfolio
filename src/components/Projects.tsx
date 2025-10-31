@@ -18,7 +18,7 @@ const Projects = () => {
       icon: PartyPopper,
       color: "accent",
       tags: ["Booking System", "Event Management", "Web Platform"],
-      link: "#"
+      link: "http://localhost/seven%20seas%20party%20lawns/"
     }
   ];
 

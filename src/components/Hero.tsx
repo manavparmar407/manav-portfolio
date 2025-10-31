@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Github, Linkedin, Mail, ChevronDown, Sparkles, Code2, TrendingUp } from "lucide-react";
-import profileImage from "@/assets/manav-profile.jpg";
+import profileImage from "@/assets/manav-profile-new.jpg";
 import { useEffect, useState } from "react";
 
 const Hero = () => {

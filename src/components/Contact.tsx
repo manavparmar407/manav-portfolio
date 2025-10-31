@@ -141,7 +141,7 @@ const Contact = () => {
                 </p>
                 <Button 
                   className="w-full bg-accent hover:bg-accent/90"
-                  onClick={() => window.location.href = 'mailto:manavparmar0407@gmail.com'}
+                  onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=manavparmar0407@gmail.com', '_blank')}
                 >
                   <Mail className="mr-2 h-4 w-4" />
                   Send Me an Email

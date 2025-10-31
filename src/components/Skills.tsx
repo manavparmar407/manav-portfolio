@@ -6,24 +6,24 @@ const Skills = () => {
   const skills = [
     {
       name: "Python",
-      level: 40,
+      level: 70,
       icon: Code2,
       color: "bg-primary",
-      description: "Actively learning programming fundamentals"
+      description: "Proficient in programming fundamentals"
     },
     {
-      name: "Machine Learning",
-      level: 30,
-      icon: Brain,
+      name: "HTML",
+      level: 90,
+      icon: Code2,
       color: "bg-accent",
-      description: "Exploring ML algorithms and concepts"
+      description: "Advanced markup and semantic HTML"
     },
     {
-      name: "Data Science",
-      level: 35,
-      icon: Database,
+      name: "CSS",
+      level: 80,
+      icon: Code2,
       color: "bg-primary",
-      description: "Building foundation in data analysis"
+      description: "Styling and responsive design"
     }
   ];
 
