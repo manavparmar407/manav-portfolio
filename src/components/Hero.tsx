@@ -64,7 +64,7 @@ const Hero = () => {
                 Manav Parmar
               </span>
               <span className="block text-3xl lg:text-5xl mt-3 text-white/90">
-                AI & Data Science Student
+                AI & Machine Learning Student
               </span>
             </h1>
             
