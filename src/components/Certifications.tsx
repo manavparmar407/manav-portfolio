@@ -3,12 +3,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Award, ExternalLink, Calendar } from "lucide-react";
+import pythonCert from "@/assets/certificates/python-certificate.jpg";
+import webDevCert from "@/assets/certificates/web-dev-certificate.jpg";
+import mlCert from "@/assets/certificates/ml-certificate.jpg";
+import dataVizCert from "@/assets/certificates/data-viz-certificate.jpg";
 
 interface Certificate {
   title: string;
   organization: string;
   date: string;
   link: string;
+  image: string;
 }
 
 const Certifications = () => {
@@ -19,25 +24,29 @@ const Certifications = () => {
       title: "Python Programming",
       organization: "Coursera",
       date: "May 2024",
-      link: "https://www.coursera.org/account/accomplishments/certificate/XYZ123"
+      link: "https://www.coursera.org/account/accomplishments/certificate/XYZ123",
+      image: pythonCert
     },
     {
       title: "HTML, CSS & JavaScript for Web Developers",
       organization: "Coursera",
       date: "July 2024",
-      link: "https://www.coursera.org/account/accomplishments/certificate/ABC456"
+      link: "https://www.coursera.org/account/accomplishments/certificate/ABC456",
+      image: webDevCert
     },
     {
       title: "Machine Learning",
       organization: "Google AI",
       date: "August 2024",
-      link: "https://developers.google.com/machine-learning"
+      link: "https://developers.google.com/machine-learning",
+      image: mlCert
     },
     {
       title: "Data Visualization with Python",
       organization: "IBM Skills Network",
       date: "September 2024",
-      link: "https://courses.ibm.com/certificates/DEF789"
+      link: "https://courses.ibm.com/certificates/DEF789",
+      image: dataVizCert
     }
   ];
 
@@ -57,13 +66,21 @@ const Certifications = () => {
           {certificates.map((cert, index) => (
             <Card
               key={index}
-              className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-accent/50 animate-fade-in"
+              className="group cursor-pointer hover:shadow-2xl hover:scale-105 transition-all duration-300 bg-card/50 backdrop-blur-sm border-primary/20 hover:border-accent/50 animate-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => setSelectedCert(cert)}
             >
+              <div className="relative h-40 overflow-hidden">
+                <img 
+                  src={cert.image} 
+                  alt={`${cert.title} certificate`}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+              </div>
               <CardContent className="p-6">
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform -mt-12 border-4 border-background shadow-lg">
                     <Award className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <div>
@@ -86,13 +103,20 @@ const Certifications = () => {
       </div>
 
       <Dialog open={!!selectedCert} onOpenChange={() => setSelectedCert(null)}>
-        <DialogContent className="sm:max-w-md bg-card/95 backdrop-blur-md border-primary/30 shadow-2xl animate-fade-in">
+        <DialogContent className="sm:max-w-2xl bg-card/95 backdrop-blur-md border-primary/30 shadow-2xl animate-fade-in">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
               {selectedCert?.title}
             </DialogTitle>
           </DialogHeader>
           <div className="space-y-6 py-4">
+            <div className="relative w-full h-64 rounded-lg overflow-hidden border-2 border-primary/20 shadow-xl">
+              <img 
+                src={selectedCert?.image} 
+                alt={`${selectedCert?.title} certificate`}
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div className="space-y-3">
               <div className="flex items-start gap-3">
                 <Award className="h-5 w-5 text-accent mt-1" />
