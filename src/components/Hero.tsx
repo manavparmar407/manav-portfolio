@@ -21,7 +21,6 @@ const Hero = () => {
   };
 
   const stats = [
-    { icon: Code2, value: "3+", label: "Projects" },
     { icon: Sparkles, value: "AI/ML", label: "Focus Area" },
     { icon: TrendingUp, value: "Growing", label: "Skillset" }
   ];

@@ -62,7 +62,7 @@ const About = () => {
           </div>
           
           {/* Learning Note */}
-          <div className="mt-8 p-6 rounded-2xl bg-gradient-accent text-white text-center">
+          <div className="mt-8 p-6 rounded-2xl bg-gradient-accent text-black text-center">
             <p className="text-lg font-medium">
               🚀 Currently expanding my technical foundation through continuous learning in Python, Machine Learning, and Data Science
             </p>

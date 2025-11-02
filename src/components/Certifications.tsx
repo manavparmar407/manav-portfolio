@@ -3,10 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Award, ExternalLink, Calendar } from "lucide-react";
-import pythonCert from "@/assets/certificates/python-certificate.jpg";
-import webDevCert from "@/assets/certificates/web-dev-certificate.jpg";
-import mlCert from "@/assets/certificates/ml-certificate.jpg";
-import dataVizCert from "@/assets/certificates/data-viz-certificate.jpg";
+import frontend from "@/assets/certificates/front end.png";
+import sql from "@/assets/certificates/sql.png";
+import video from "@/assets/certificates/video.png";
+
 
 interface Certificate {
   title: string;
@@ -21,33 +21,26 @@ const Certifications = () => {
 
   const certificates: Certificate[] = [
     {
-      title: "Python Programming",
-      organization: "Coursera",
-      date: "May 2024",
-      link: "https://www.coursera.org/account/accomplishments/certificate/XYZ123",
-      image: pythonCert
+      title: "Front End Development",
+      organization: "Simplilearn",
+      date: "Nov 2025",
+      link: "https://simpli-web.app.link/e/xXfcUuHyXXb",
+      image: frontend
     },
     {
-      title: "HTML, CSS & JavaScript for Web Developers",
-      organization: "Coursera",
-      date: "July 2024",
-      link: "https://www.coursera.org/account/accomplishments/certificate/ABC456",
-      image: webDevCert
+      title: "Introduction to SQL",
+      organization: "Simplilearn",
+      date: "Nov 2025",
+      link: "https://simpli-web.app.link/e/CHg9nNPyXXb",
+      image: sql
     },
     {
-      title: "Machine Learning",
-      organization: "Google AI",
-      date: "August 2024",
-      link: "https://developers.google.com/machine-learning",
-      image: mlCert
+      title: "Creating Engaging Video",
+      organization: "Simplilearn",
+      date: "Nov 2025",
+      link: "https://simpli-web.app.link/e/dhxVeQ3yXXb",
+      image: video
     },
-    {
-      title: "Data Visualization with Python",
-      organization: "IBM Skills Network",
-      date: "September 2024",
-      link: "https://courses.ibm.com/certificates/DEF789",
-      image: dataVizCert
-    }
   ];
 
   return (
@@ -62,7 +55,7 @@ const Certifications = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {certificates.map((cert, index) => (
             <Card
               key={index}

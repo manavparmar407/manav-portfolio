@@ -6,7 +6,7 @@ const Skills = () => {
   const skills = [
     {
       name: "Python",
-      level: 70,
+      level: 55,
       icon: Code2,
       color: "bg-primary",
       description: "Proficient in programming fundamentals"
@@ -24,6 +24,20 @@ const Skills = () => {
       icon: Code2,
       color: "bg-primary",
       description: "Styling and responsive design"
+    },
+        {
+      name: "JavaScript",
+      level: 70,
+      icon: Code2,
+      color: "bg-primary",
+      description: "Dynamic web functionality"
+    },
+        {
+      name: "MySQL",
+      level: 75,
+      icon: Code2,
+      color: "bg-primary",
+      description: "Database management and queries"
     }
   ];
 

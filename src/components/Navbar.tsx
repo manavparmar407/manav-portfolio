@@ -64,13 +64,6 @@ const Navbar = () => {
                 {link.label}
               </button>
             ))}
-            
-            <Button 
-              className="bg-accent hover:bg-accent/90 text-white"
-              onClick={() => scrollToSection('contact')}
-            >
-              Hire Me
-            </Button>
           </div>
           
           {/* Mobile Menu Button */}
