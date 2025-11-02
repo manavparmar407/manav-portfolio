@@ -10,7 +10,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -24,24 +24,24 @@ const Navbar = () => {
   const navLinks = [
     { label: "Home", id: "home" },
     { label: "About", id: "about" },
-    { label: "Education", id: "education" },
     { label: "Skills", id: "skills" },
     { label: "Portfolio", id: "portfolio" },
+    { label: "Certifications", id: "certifications" },
+    { label: "Education", id: "education" },
     { label: "Contact", id: "contact" },
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/95 backdrop-blur-md shadow-lg" 
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? "bg-background/95 backdrop-blur-md shadow-lg"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button 
+          <button
             onClick={() => scrollToSection('home')}
             className="text-2xl font-bold"
           >
@@ -50,22 +50,21 @@ const Navbar = () => {
             </span>
             <span className="text-accent">.</span>
           </button>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`font-medium transition-colors hover:text-accent ${
-                  isScrolled ? "text-foreground" : "text-white"
-                }`}
+                className={`font-medium transition-colors hover:text-accent ${isScrolled ? "text-foreground" : "text-white"
+                  }`}
               >
                 {link.label}
               </button>
             ))}
           </div>
-          
+
           {/* Mobile Menu Button */}
           <button
             className="md:hidden"
@@ -78,7 +77,7 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        
+
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-6 animate-fade-in">
@@ -92,8 +91,8 @@ const Navbar = () => {
                   {link.label}
                 </button>
               ))}
-              
-              <Button 
+
+              <Button
                 className="bg-accent hover:bg-accent/90 text-white w-full"
                 onClick={() => scrollToSection('contact')}
               >
