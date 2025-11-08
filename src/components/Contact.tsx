@@ -1,6 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Linkedin, Github, Instagram, MapPin } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  Instagram,
+  MapPin,
+} from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -9,22 +16,22 @@ const Contact = () => {
       label: "Email",
       value: "manavparmar0407@gmail.com",
       link: "mailto:manavparmar0407@gmail.com",
-      color: "primary"
+      color: "primary",
     },
     {
       icon: Phone,
       label: "Phone",
       value: "+91 7203920632",
       link: "tel:+917203920632",
-      color: "accent"
+      color: "accent",
     },
     {
       icon: MapPin,
       label: "Location",
       value: "Rajkot, Gujarat, India",
       link: null,
-      color: "primary"
-    }
+      color: "primary",
+    },
   ];
 
   const socialLinks = [
@@ -33,115 +40,210 @@ const Contact = () => {
       label: "LinkedIn",
       username: "manavparmar0407",
       link: "https://linkedin.com/in/manavparmar0407",
-      color: "primary"
     },
     {
       icon: Github,
       label: "GitHub",
       username: "manavparmar407",
       link: "https://github.com/manavparmar407",
-      color: "primary"
     },
     {
       icon: Instagram,
       label: "Instagram",
       username: "@im.manavvvv",
       link: "https://instagram.com/im.manavvvv",
-      color: "accent"
-    }
+    },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-secondary/30">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 relative">
+      {/* Soft glow background */}
+      <div
+        className="
+        absolute inset-0 pointer-events-none
+        opacity-15 dark:opacity-10
+        bg-[radial-gradient(circle_at_top,hsla(var(--primary)/0.25),transparent)]
+        dark:bg-[radial-gradient(circle_at_center,hsla(var(--accent)/0.2),transparent)]
+      "
+      />
+
+      <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-12 animate-fade-in">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Contact</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4">
-              Let's <span className="text-primary">Connect</span>
+          {/* HEADER */}
+          <div className="text-center mb-16 animate-fade-in">
+            <span className="text-accent font-semibold text-sm uppercase tracking-widest">
+              Contact
+            </span>
+
+            <h2 className="text-4xl lg:text-5xl font-extrabold mt-3 mb-4">
+              Let’s <span className="text-primary">Connect</span>
             </h2>
-            <div className="w-20 h-1 bg-accent mx-auto rounded-full mb-4" />
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Feel free to reach out for collaborations, opportunities, or just a friendly chat about tech!
+
+            <div className="w-24 h-1 bg-accent mx-auto rounded-full mb-6" />
+
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+              I'm open to collaborations, opportunities, and conversations around AI & development.
             </p>
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact Information */}
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* CONTACT INFO SECTION */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-              
+              <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
+
               {contactInfo.map((info, index) => (
-                <Card 
+                <Card
                   key={index}
-                  className="p-6 shadow-card hover:shadow-hover transition-all animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
+                  className="
+      p-6 rounded-2xl
+      bg-card/70 dark:bg-background/40
+      border border-border/70 dark:border-border/40
+      backdrop-blur-xl
+      shadow-card hover:shadow-hover
+      hover:-translate-y-1
+      transition-all animate-slide-up
+    "
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`w-14 h-14 rounded-2xl ${
-                      info.color === 'primary' ? 'bg-primary/10' : 'bg-accent/10'
-                    } flex items-center justify-center flex-shrink-0`}>
-                      <info.icon className={`h-6 w-6 ${
-                        info.color === 'primary' ? 'text-primary' : 'text-accent'
-                      }`} />
+
+                    {/* ICON WRAPPER */}
+                    <div
+                      className={`
+          w-14 h-14 rounded-xl flex items-center justify-center
+          ${info.color === "primary"
+                          ? "bg-primary/15 dark:bg-primary/25"
+                          : "bg-accent/15 dark:bg-accent/25"
+                        }
+        `}
+                    >
+                      <info.icon
+                        className={`
+            h-7 w-7 
+            ${info.color === "primary" ? "text-primary" : "text-accent"}
+            dark:text-white
+          `}
+                      />
                     </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-muted-foreground mb-1">{info.label}</p>
+
+                    {/* TEXT */}
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">
+                        {info.label}
+                      </p>
+
                       {info.link ? (
-                        <a 
+                        <a
                           href={info.link}
-                          className="font-semibold hover:text-primary transition-colors"
+                          className="
+              font-semibold text-lg 
+              hover:text-primary 
+              transition
+            "
                         >
                           {info.value}
                         </a>
                       ) : (
-                        <p className="font-semibold">{info.value}</p>
+                        <p className="font-semibold text-lg dark:text-white">
+                          {info.value}
+                        </p>
                       )}
                     </div>
                   </div>
                 </Card>
               ))}
+
             </div>
-            
-            {/* Social Links */}
+
+            {/* SOCIAL LINKS */}
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold mb-6">Social Media</h3>
-              
+              <h3 className="text-2xl font-bold mb-4">Social Media</h3>
+
               {socialLinks.map((social, index) => (
-                <Card 
+                <Card
                   key={index}
-                  className="p-6 shadow-card hover:shadow-hover transition-all animate-slide-up group cursor-pointer"
-                  style={{ animationDelay: `${index * 0.1 + 0.3}s` }}
-                  onClick={() => window.open(social.link, '_blank')}
+                  onClick={() => window.open(social.link, "_blank")}
+                  className="
+    p-6 cursor-pointer
+    bg-card/70 dark:bg-background/40
+    backdrop-blur-xl
+    rounded-2xl
+    border border-border/70 dark:border-border/40
+    hover:-translate-y-1 
+    shadow-lg hover:shadow-hover
+    transition-all 
+    animate-slide-up 
+    group
+  "
+                  style={{ animationDelay: `${index * 0.12 + 0.3}s` }}
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`w-14 h-14 rounded-2xl ${
-                      social.color === 'primary' ? 'bg-primary/10 group-hover:bg-primary/20' : 'bg-accent/10 group-hover:bg-accent/20'
-                    } flex items-center justify-center flex-shrink-0 transition-colors`}>
-                      <social.icon className={`h-6 w-6 ${
-                        social.color === 'primary' ? 'text-primary' : 'text-accent'
-                      }`} />
+
+                    {/* ICON */}
+                    <div className={`
+      w-14 h-14 rounded-xl flex items-center justify-center transition-all
+      ${social.color === "primary"
+                        ? "bg-primary/15 dark:bg-primary/25"
+                        : "bg-accent/15 dark:bg-accent/25"}
+    `}>
+                      <social.icon
+                        className={`
+          h-7 w-7
+          ${social.color === "primary" ? "text-primary" : "text-accent"}
+          dark:text-white
+        `}
+                      />
                     </div>
-                    <div className="flex-1">
-                      <p className="text-sm text-muted-foreground mb-1">{social.label}</p>
-                      <p className="font-semibold group-hover:text-primary transition-colors">
+
+                    {/* TEXT */}
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1 dark:text-muted-foreground">
+                        {social.label}
+                      </p>
+
+                      <p
+                        className="
+          font-semibold text-lg group-hover:text-primary
+          dark:text-white dark:group-hover:text-white
+        "
+                      >
                         {social.username}
                       </p>
                     </div>
+
                   </div>
                 </Card>
               ))}
-              
-              {/* CTA Card */}
-              <Card className="p-6 gradient-hero text-white shadow-card">
+
+              {/* CTA CARD */}
+              <Card
+                className="
+    p-8 rounded-2xl
+    bg-primary text-primary-foreground
+    shadow-xl hover:-translate-y-1 transition-all
+
+    dark:bg-card
+    dark:text-card-foreground
+  "
+              >
                 <h4 className="text-xl font-bold mb-2">Open to Opportunities</h4>
-                <p className="text-white/80 mb-4">
-                  Interested in internships, collaborations, or learning opportunities in AI & Data Science
+
+                <p className="text-primary-foreground/80 dark:text-muted-foreground mb-4">
+                  Whether it's an internship, collaboration, or freelance opportunity —
+                  feel free to contact me.
                 </p>
-                <Button 
-                  className="w-full bg-accent hover:bg-accent/90"
-                  onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=manavparmar0407@gmail.com', '_blank')}
+
+                <Button
+                  className="
+      w-full bg-accent hover:bg-accent/90 text-accent-foreground
+      dark:bg-accent dark:hover:bg-accent/90
+    "
+                  onClick={() =>
+                    window.open(
+                      'https://mail.google.com/mail/?view=cm&fs=1&to=manavparmar0407@gmail.com',
+                      '_blank'
+                    )
+                  }
                 >
                   <Mail className="mr-2 h-4 w-4" />
                   Send Me an Email

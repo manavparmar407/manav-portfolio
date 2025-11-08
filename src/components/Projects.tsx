@@ -50,7 +50,7 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors">
                     {project.title}
                   </h3>
 
@@ -73,7 +73,7 @@ const Projects = () => {
                   {/* Action Buttons */}
                   <div className="flex gap-3">
                     <Button
-                      className="flex-1 bg-primary hover:bg-primary/90"
+                      className="flex-1 bg-primary hover:bg-primary/90 text-white"
                       onClick={() => window.open(project.link, "_blank")}
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />

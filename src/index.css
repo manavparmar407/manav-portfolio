@@ -2,102 +2,172 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/*
+   New reduced design system:
+   - Primary = Red
+   - Accent = Green
+   - Background = White/Black
+   - No gradients for hero
 */
 
 @layer base {
   :root {
+    /* Backgrounds */
     --background: 0 0% 100%;
-    --foreground: 230 35% 15%;
+    /* White */
+    --foreground: 210 15% 12%;
+    /* Deep neutral-black */
 
     --card: 0 0% 100%;
-    --card-foreground: 230 35% 15%;
+    --card-foreground: 210 15% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 35% 15%;
+    --popover-foreground: 210 15% 12%;
 
-    --primary: 230 60% 25%;
+    /* === Primary (RED family) === */
+    --primary: 0 75% 55%;
+    /* Red-500 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 50% 96%;
-    --secondary-foreground: 230 60% 25%;
+    /* === Secondary (Soft white/neutral) === */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 75% 55%;
+    /* Pairs with red */
 
-    --muted: 240 20% 96%;
-    --muted-foreground: 230 15% 50%;
+    /* Muted surfaces */
+    --muted: 0 0% 92%;
+    --muted-foreground: 210 10% 40%;
 
-    --accent: 35 100% 60%;
+    /* === Accent (GREEN family) === */
+    --accent: 140 60% 45%;
+    /* Green-500 */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Destructive (Red family deeper) */
+    --destructive: 0 70% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 230 20% 90%;
-    --input: 230 20% 90%;
-    --ring: 230 60% 25%;
+    /* Borders / inputs */
+    --border: 210 15% 85%;
+    --input: 210 15% 85%;
+    --ring: 0 75% 55%;
+    /* Red ring */
 
     --radius: 1rem;
-    
-    --gradient-hero: linear-gradient(135deg, hsl(230 60% 25%), hsl(240 65% 35%));
-    --gradient-accent: linear-gradient(135deg, hsl(35 100% 60%), hsl(25 100% 55%));
-    --shadow-card: 0 4px 20px -2px hsl(230 60% 25% / 0.1);
-    --shadow-hover: 0 8px 30px -4px hsl(230 60% 25% / 0.15);
 
+    /* Removed hero gradient (you requested this) */
+    --gradient-hero: none;
+
+    /* Keep accent gradient (optional) */
+    --gradient-accent: linear-gradient(135deg,
+        hsl(139, 76%, 17%),
+        hsl(141, 13%, 21%));
+
+    /* Shadows updated to fit red theme */
+    --shadow-card: 0 4px 20px -2px hsl(0 75% 55% / 0.15);
+    --shadow-hover: 0 8px 30px -4px hsl(0 75% 55% / 0.25);
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 210 15% 12%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 0 75% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-accent: 140 60% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-border: 210 10% 88%;
+    --sidebar-ring: 0 75% 55%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* NAVBAR — LIGHT MODE */
+    --navbar-logo: 0 75% 55%;
+    /* red */
+    --navbar-links: 140 60% 45%;
+    /* green */
+    --navbar-gradient: linear-gradient(135deg,
+        hsl(0 70% 40%),
+        /* dark red */
+        hsl(0 0% 100%)
+        /* white */
+      );
   }
 
+  /* ---------------- DARK MODE ---------------- */
   .dark {
-    --background: 230 35% 10%;
+    --background: 210 20% 10%;
+    /* Deep charcoal */
     --foreground: 0 0% 98%;
+    /* White */
 
-    --card: 230 30% 15%;
-    --card-foreground: 0 0% 98%;
+    --card: 210 20% 14%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 230 30% 15%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 210 20% 14%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 230 60% 25%;
+    /* Red brighter in dark mode */
+    --primary: 0 80% 65%;
+    --primary-foreground: 210 20% 10%;
 
-    --secondary: 230 30% 20%;
+    /* Secondary */
+    --secondary: 210 20% 18%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 230 30% 20%;
-    --muted-foreground: 230 10% 65%;
+    /* Muted */
+    --muted: 210 20% 20%;
+    --muted-foreground: 210 10% 70%;
 
-    --accent: 35 100% 60%;
+    /* Green brighter in dark mode */
+    --accent: 140 65% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
+    /* Red destructive */
+    --destructive: 0 65% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 230 30% 20%;
-    --input: 230 30% 20%;
-    --ring: 230 60% 50%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Borders / inputs */
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 0 80% 65%;
+    /* Light red */
+
+    /* Sidebar */
+    --sidebar-background: 210 20% 12%;
+    --sidebar-foreground: 0 0% 98%;
+
+    --sidebar-primary: 0 80% 65%;
+    --sidebar-primary-foreground: 210 20% 10%;
+
+    --sidebar-accent: 140 65% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+
+    --sidebar-border: 210 20% 18%;
+    --sidebar-ring: 0 80% 65%;
+
+    /* NAVBAR — DARK MODE */
+    --navbar-logo: 0 0% 100%;
+    /* white */
+    --navbar-links: 140 65% 70%;
+    /* light green */
+    --navbar-gradient: linear-gradient(135deg,
+        hsl(0 80% 65%),
+        /* light red */
+        hsl(0 0% 100%)
+        /* white */
+      );
+
+    --gradient-accent: linear-gradient(135deg,
+        hsl(0, 0%, 100%),
+        /* deeper green */
+        hsl(140, 100%, 67%)
+        /* almost forest green */
+      );
+
   }
 }
+
+
 
 @layer base {
   * {
@@ -106,23 +176,24 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
 @layer utilities {
   .gradient-hero {
+    /* hero gradient disabled */
     background: var(--gradient-hero);
   }
-  
+
   .gradient-accent {
     background: var(--gradient-accent);
   }
-  
+
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
-  
+
   .shadow-hover {
     box-shadow: var(--shadow-hover);
   }

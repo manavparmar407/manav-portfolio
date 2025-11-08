@@ -61,14 +61,12 @@ const SoftSkills = () => {
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div
-                    className={`w-14 h-14 rounded-2xl ${
-                      skill.color === "bg-primary" ? "bg-primary/10" : "bg-accent/10"
-                    } flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}
+                    className={`w-14 h-14 rounded-2xl ${skill.color === "bg-primary" ? "bg-primary/10" : "bg-accent/10"
+                      } flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform`}
                   >
                     <skill.icon
-                      className={`h-7 w-7 ${
-                        skill.color === "bg-primary" ? "text-primary" : "text-accent"
-                      }`}
+                      className={`h-7 w-7 ${skill.color === "bg-primary" ? "text-primary" : "text-accent"
+                        }`}
                     />
                   </div>
                   <div className="flex-1">
@@ -89,23 +87,52 @@ const SoftSkills = () => {
           </div>
 
           {/* Note Card */}
-          <Card className="p-8 shadow-card">
+          <Card
+            className="
+    p-8 rounded-2xl shadow-card transition-all
+
+    /* LIGHT MODE */
+    gradient-accent
+    text-white
+
+    /* DARK MODE */
+    dark:bg-white
+    dark:text-black
+    dark:border-primary/40
+  "
+          >
             <div className="flex items-start gap-6">
+
+              {/* Icon */}
               <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                <Sparkles className="h-8 w-8 text-accent" />
+                <Sparkles className="h-8 w-8 text-accent dark:text-primary" />
               </div>
+
+              {/* Text */}
               <div>
                 <h3 className="text-2xl font-bold mb-3">
                   Growth Beyond Code
                 </h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  I believe strong communication, adaptability, and leadership are as important as technical skills. 
+
+                <p className="leading-relaxed mb-4">
+                  I believe strong communication, adaptability, and leadership are as important as technical skills.
                   These traits help me connect, collaborate, and deliver projects that truly make an impact.
                 </p>
-                <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary font-semibold text-sm">
+
+                {/* Badge */}
+                <div
+                  className="
+          inline-block px-4 py-2 rounded-full 
+          bg-primary/10 text-white font-semibold text-sm
+
+          dark:bg-primary/10
+          dark:text-black
+        "
+                >
                   💬 Soft Skills Define Success
                 </div>
               </div>
+
             </div>
           </Card>
         </div>

@@ -3,70 +3,141 @@ import { Card } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-secondary/30">
+    <section
+      id="about"
+      className="py-20 bg-secondary/30 dark:bg-secondary/20 transition-colors"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
+
+          {/* Header */}
           <div className="text-center mb-12 animate-fade-in">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">About Me</span>
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+              About Me
+            </span>
             <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4">
               My Journey & <span className="text-primary">Aspirations</span>
             </h2>
             <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
           </div>
-          
+
           {/* Bio Card */}
-          <Card className="p-8 mb-8 shadow-card hover:shadow-hover transition-all animate-slide-up">
+          <Card
+            className="
+              p-8 mb-8 shadow-card hover:shadow-hover transition-all animate-slide-up
+              bg-card/80 dark:bg-background/40 border border-border/50
+            "
+          >
             <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-              My name is <span className="text-foreground font-semibold">Manav Parmar</span>, and I am from <span className="text-foreground font-semibold">Rajkot</span>. 
-              I'm a focused and dedicated learner who enjoys exploring new skills and challenges. 
+              My name is{" "}
+              <span className="text-foreground font-semibold">Manav Parmar</span>,
+              and I am from{" "}
+              <span className="text-foreground font-semibold">Rajkot</span>.
+              I’m a focused and dedicated learner who enjoys exploring new skills
+              and challenges.
             </p>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              I have completed my <span className="text-foreground font-semibold">BCA from Saurashtra University, Rajkot</span> (2022–2025) 
-              and am currently pursuing my <span className="text-foreground font-semibold">MCA in Artificial Intelligence and Machine Learning</span> at 
-              <span className="text-foreground font-semibold"> Lovely Professional University</span>.
+              I have completed my{" "}
+              <span className="text-foreground font-semibold">
+                BCA from Saurashtra University, Rajkot
+              </span>{" "}
+              (2022–2025) and am currently pursuing my{" "}
+              <span className="text-foreground font-semibold">
+                MCA in Artificial Intelligence & Machine Learning
+              </span>{" "}
+              at{" "}
+              <span className="text-foreground font-semibold">
+                Lovely Professional University
+              </span>.
             </p>
           </Card>
-          
-          {/* Highlights Grid */}
+
+          {/* Highlights */}
           <div className="grid md:grid-cols-3 gap-6 mt-8">
-            <Card className="p-6 text-center shadow-card hover:shadow-hover transition-all group hover:scale-105">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <GraduationCap className="h-8 w-8 text-primary" />
+            <Card
+              className="
+                p-6 text-center shadow-card hover:shadow-hover transition-all group 
+                hover:scale-105 bg-card/80 dark:bg-background/40 border border-border/50
+              "
+            >
+              <div
+                className="
+                  w-16 h-16 mx-auto mb-4 rounded-2xl
+                  bg-primary/10 dark:bg-primary/20
+                  flex items-center justify-center
+                  group-hover:bg-primary/25 transition-colors
+                "
+              >
+                <GraduationCap className="h-8 w-8 text-primary dark:text-primary" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Education Focused</h3>
+              <h3 className="font-semibold text-lg mb-2 text-foreground">Education Focused</h3>
               <p className="text-sm text-muted-foreground">
                 Building strong academic foundation in AI & ML
               </p>
             </Card>
-            
-            <Card className="p-6 text-center shadow-card hover:shadow-hover transition-all group hover:scale-105">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                <Target className="h-8 w-8 text-accent" />
+
+            <Card
+              className="
+                p-6 text-center shadow-card hover:shadow-hover transition-all group 
+                hover:scale-105 bg-card/80 dark:bg-background/40 border border-border/50
+              "
+            >
+              <div
+                className="
+                  w-16 h-16 mx-auto mb-4 rounded-2xl
+                  bg-accent/10 dark:bg-accent/20
+                  flex items-center justify-center
+                  group-hover:bg-accent/25 transition-colors
+                "
+              >
+                <Target className="h-8 w-8 text-accent dark:text-accent" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Goal Oriented</h3>
+              <h3 className="font-semibold text-lg mb-2 text-foreground">Goal Oriented</h3>
               <p className="text-sm text-muted-foreground">
                 Dedicated to mastering Data Science & ML
               </p>
             </Card>
-            
-            <Card className="p-6 text-center shadow-card hover:shadow-hover transition-all group hover:scale-105">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <Sparkles className="h-8 w-8 text-primary" />
+
+            <Card
+              className="
+                p-6 text-center shadow-card hover:shadow-hover transition-all group 
+                hover:scale-105 bg-card/80 dark:bg-background/40 border border-border/50
+              "
+            >
+              <div
+                className="
+                  w-16 h-16 mx-auto mb-4 rounded-2xl
+                  bg-primary/10 dark:bg-primary/20
+                  flex items-center justify-center
+                  group-hover:bg-primary/25 transition-colors
+                "
+              >
+                <Sparkles className="h-8 w-8 text-primary dark:text-primary" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Continuous Learner</h3>
+              <h3 className="font-semibold text-lg mb-2 text-foreground">Continuous Learner</h3>
               <p className="text-sm text-muted-foreground">
                 Always exploring new skills and technologies
               </p>
             </Card>
           </div>
-          
-          {/* Learning Note */}
-          <div className="mt-8 p-6 rounded-2xl bg-gradient-accent text-black text-center">
+
+          <div
+            className="
+    mt-8 p-6 rounded-2xl text-center shadow-card
+
+    /* Light mode */
+    gradient-accent 
+    text-accent-foreground
+    dark:text-black
+    dark:border-primary/40
+  "
+          >
             <p className="text-lg font-medium">
-              🚀 Currently expanding my technical foundation through continuous learning in Python, Machine Learning, and Data Science
+              🚀 Currently expanding my technical foundation through continuous learning
+              in Python, Machine Learning, and Data Science
             </p>
           </div>
+
         </div>
       </div>
     </section>

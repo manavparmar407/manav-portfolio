@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,21 +34,27 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+        navbar-bg
+        ${isScrolled ? "backdrop-blur-md shadow-lg" : ""}
+      `}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
+
           {/* Logo */}
           <button
-            onClick={() => scrollToSection('home')}
-            className="text-2xl font-bold"
+            onClick={() => scrollToSection("home")}
+            className="text-2xl font-bold flex items-center gap-1"
           >
-            <span className={isScrolled ? "text-primary" : "text-white"}>
+            <span
+              className="transition"
+              style={{ color: `hsl(var(--navbar-logo))` }}
+            >
               Manav
             </span>
+
+            {/* Logo Dot = Accent Green */}
             <span className="text-accent">.</span>
           </button>
 
@@ -58,12 +64,15 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`font-medium transition-colors hover:text-accent ${isScrolled ? "text-foreground" : "text-white"
-                  }`}
+                style={{ color: `hsl(var(--navbar-links))` }}
+                className="font-medium transition-colors hover:opacity-80"
               >
                 {link.label}
               </button>
             ))}
+
+            {/* Theme Toggle */}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -72,9 +81,15 @@ const Navbar = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} />
+              <X
+                className="h-6 w-6"
+                style={{ color: `hsl(var(--navbar-links))` }}
+              />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? "text-foreground" : "text-white"}`} />
+              <Menu
+                className="h-6 w-6"
+                style={{ color: `hsl(var(--navbar-links))` }}
+              />
             )}
           </button>
         </div>
@@ -82,23 +97,20 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-6 animate-fade-in">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 mt-4">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-left font-medium py-2 px-4 rounded-lg hover:bg-secondary transition-colors"
+                  className="text-left font-medium py-2 px-4 rounded-lg transition-colors"
+                  style={{ color: `hsl(var(--navbar-links))` }}
                 >
                   {link.label}
                 </button>
               ))}
 
-              <Button
-                className="bg-accent hover:bg-accent/90 text-white w-full"
-                onClick={() => scrollToSection('contact')}
-              >
-                Hire Me
-              </Button>
+              {/* Mobile Theme Toggle */}
+              <ThemeToggle />
             </div>
           </div>
         )}
